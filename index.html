@@ -1,42 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-145ESS8XRF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-145ESS8XRF');
-</script>
-
-<style>
-.container {
-    display: flex;
-}
-.column {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex: 25%; /* This is the correct flex setting for column width */
-    padding: 10px;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-th, td {
-    border: 2px solid black;
-    padding: 5px;
-    text-align: left;
-    vertical-align: top; /* Ensures content is aligned to the top */
-}
-th {
-    background-color: #f2f2f2;
-}
-</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Domain Names</title>
@@ -46,8 +10,79 @@ th {
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-145ESS8XRF');
+</script>
+<style>
+.filter-dropdown {
+    margin: 20px;
+}
+
+.filter-dropdown select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 5px;
+    text-align: left;
+    vertical-align: top; /* Ensures content is aligned to the top */
+}
+
+th {
+    background-color: #f2f2f2;
+}
+@media screen and (max-width: 768px) {
+    table, th, td {
+        display: block;
+        width: 100%;
+    }
+
+    th, td {
+        box-sizing: border-box;
+        border: 2px solid black;
+        text-align: left;
+        vertical-align: top; /* Ensures content is aligned to the top */
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+}
+</style>
+<script>
+function filterDomains() {
+    var filter = document.getElementById('domainFilter').value;
+    var allColumns = document.getElementsByClassName('domain-column');
+    
+    for (var i = 0; i < allColumns.length; i++) {
+        allColumns[i].style.display = 'none';
+    }
+
+    if (filter === 'all') {
+        for (var i = 0; i < allColumns.length; i++) {
+            allColumns[i].style.display = 'table-cell';
+        }
+    } else {
+        var filteredColumns = document.getElementsByClassName(filter);
+        for (var i = 0; i < filteredColumns.length; i++) {
+            filteredColumns[i].style.display = 'table-cell';
+        }
+    }
+}
+
+// Initial call to display all domains on page load
+window.onload = function() {
+    filterDomains();
+    document.getElementById('domainFilter').addEventListener('change', filterDomains);
+};
 </script>
 </head>
 <body>
@@ -55,7 +90,6 @@ th {
 <font size="4" face="Arial">
     Looking for a domain / domains? You are at the right place. <h3> Welcome to Domainloo ! </h3>
     
-
 For TON domain names .com and .tg extensions: visit <a href="https://tonmarketplace.com">TON Marketplace</a>
 For original my hand made NFTs on real canvas with beautiful colorful patterns minted on Sol Blockchain, take a look,
 visit <a href="https://magiceden.io/marketplace/muchos_colores">Muchos Colores</a>
@@ -64,681 +98,694 @@ visit <a href="https://magiceden.io/marketplace/muchos_colores">Muchos Colores</
     All domains listed below are on fair BIN price depending on the domain name, but still, I am open for small negotiations, if any. 
     Feel Free to contact me via WhatsApp: +1 587-568-7971 OR Email: felahi01@gmail.com
 </b>
-<h5> Domains Categories available are, .com, .ai, .si, .bot, .xyz, Ai+keyword(s).com(s), Keyword(s)+Ai.com, GPT+keyword(s).com, Keyword(s)+gpt.com, and Miscellaneous such as .tg, .tech, .org etc </h5>
+<h5> Domains Categories available are, .com, .ai, .si, .bot, .xyz, Ai+keyword(s).com(s), Keyword(s)+Ai.com, GPT+keyword(s).com, Keyword(s)+GPT.com, and Miscellaneous such as .tg, .tech, .org etc </h5>
+
+<div class="filter-dropdown">
+    <label for="domainFilter">Filter Domains:</label>
+    <select id="domainFilter">
+        <option value="all">All</option>
+        <option value="com">.Com</option>
+        <option value="ai">.Ai</option>
+        <option value="si">.Si</option>
+        <option value="bot">.Bot</option>
+        <option value="xyz">.XYZ</option>
+        <option value="keyword-ai">Keyword(s)+AI.com</option>
+        <option value="ai-keyword">AI+Keyword(s).com</option>
+        <option value="keyword-gpt">Keyword(s)+GPT.com</option>
+        <option value="gpt-keyword">GPT+Keyword(s).com</option>
+        <option value="miscellaneous">Miscellaneous</option>
+    </select>
+</div>
 
 <table>
     <tr>
-        <th>.Com</th>
-        <th>.Ai</th>
-        <th>.Si</th>
-        <th>.Bot</th>
-        <th>.XYZ Domains</th>
-        <th>Keyword(s)+AI.com</th>
-        <th>AI+Keyword(s).com</th>
-        <th>Keyword(s)+GPT.com</th>
-        <th>GPT+Keyword(s).com</th>
-        <th>Miscellaneous</th>
+        <th class="domain-column all com">.Com</th>
+        <th class="domain-column all ai">.Ai</th>
+        <th class="domain-column all si">.Si</th>
+        <th class="domain-column all bot">.Bot</th>
+        <th class="domain-column all xyz">.XYZ Domains</th>
+        <th class="domain-column all keyword-ai">Keyword(s)+AI.com</th>
+        <th class="domain-column all ai-keyword">AI+Keyword(s).com</th>
+        <th class="domain-column all keyword-gpt">Keyword(s)+GPT.com</th>
+        <th class="domain-column all gpt-keyword">GPT+Keyword(s).com</th>
+        <th class="domain-column all miscellaneous">Miscellaneous</th>
     </tr>
     <tr>
-        <td> 
-VGLY.com<br>
-FFNP.com<br>
-DKDX.com<br>
-Oreky.com<br>
-Autoash.com<br>
-Wikindex.com<br>
-Zigex.com<br>
-Nitiri.com<br>
-Mizoz.com<br>
-Woholo.com<br>
-Yazuh.com<br>
-Zemiy.com<br>
-YawBet.com<br>
-Yp97.com<br>
-Jajax.com<br>
-Vitvo.com<br>
-Ebzly.com<br>
-Ebzny.com<br>
-Korrol.com<br>
-Zarroo.com<br>
-Brytcoin.com<br>
-Brytroom.com<br>
-Hytcoin.com<br>
-Lyfcoin.com<br>
-BrytRoom.com<br>
-DBCrunch.com<br>
-DuduRobotics.com<br>
-Fruitylo.com<br>
-Yakyz.com<br>
-Arxik.com<br>
-Grokux.com<br>
-Azkiz.com<br>
-Azkix.com<br>
-Duetera.com<br>
-Ritkik.com<br>
-AATTN.com<br>
-OptionVoice.com<br>
-123Verse.com<br>
-Dyorverse.com<br>
-Gaiaverse.com<br>
-Intframe.com<br>  (Intelligent frame)
-Asifra.com<br> (Artificial Super Intelligent Female Robotic Assistant)
-ZVSecurity.com<br>
-Chimerize.com<br>
-Moneybizz.com<br>
-Heytelepathy.com<br>
-Botsom.com<br>
-Election2k24.com<br>
-TrumpOnceAgain.com<br>
-Election2024Results.com<br>
-Runesmaster.com<br>
-Runescards.com<br>
-SupeRunes.com<br>
-Runedevs.com<br>
-Runefork.com<br>
-RuneRumble.com<br>
-RuneArena.com<br>
-TonMiles.com<br>
-TonRarity.com<br>
-Gangton.com<br>
-Tonames.com<br>
-TonAnime.com<br>
-TonArena.com<br>
-TonBotics.com<br>
-TonCopilot.com<br>
-TonCubs.com<br>
-TonDirectory.com<br>
-TonDividend.com<br>
-TonDudes.com<br>
-TonFreedom.com<br>
-TonHackathon.com<br>
-TonKitties.com<br>
-TonMoji.com<br>
-TonPenguins.com<br>
-TonPing.com<br>
-TonPlaza.com<br>
-TonPlot.com<br>
-TonPups.com<br>
-Tonsanity.com<br>
-Tonsora.com<br>
-Tonston.com<br>
-Tontether.com<br>
-Tonting.com<br>
-Tontoonz.com<br>
-Tontower.com<br>
-Tontunes.com<br>
-Tonventure.com<br>
-OnedayOneHome.com<br>
-Unlimitvoice.com<br>
-Photoxel.com<br>
-Exoxel.com<br>
-Mindecoder.com<br>
-Onlypromptly.com<br>
-Xrevv.com<br>
-Xwishx.com<br>
-Theoutsmart.com<br>
-Islamicgulf.com<br>
-Mindecoder.com<br>
-Onlypromptly.com<br>
-Xrevv.com<br>
-Xwishx.com<br>
-Greeninlife.com<br>
-Tosdt.com<br>
-AudibleAssistant.com<br>
-ConfigurePrompt.com<br>
-Whatexchange.com<br>
-Freewaylandscaping.com<br>
-CaptchaGenerator.com<br>
-Kwikychat.com<br>
-Indexeschat.com<br>
-Genappfactory.com<br>
-Openeduhub.com<br>
-Xtractify.com<br>
-Xporfolio.com<br>
-Democraticedu.com<br>
-Txt2Meme.com<br>
-OpenneuroMorph.com<br>
-IntelligentEXE.com<br>
-SpatialRemix.com<br>
-Fakeimggenerator.com<br>
-DocuIntelligence.com<br>
-Vmworkstation.com<br>
-PrestoXpert.com<br>
-Zksyncux.com<br>
-Zkeraux.com<br>
-Spatialaah.com<br>
-Generativecontentengine.com<br>
-Spatialsoundproof.com<br>
-Multiby.com<br>
-AutoDateMatch.com<br>
-Zkfullstack.com<br>
-TrustyCopilot.com<br>
-Languagemotion.com<br>
-AllGenerative.com<br>
-Op3nweb3.com<br>
-Spatialstorm.com<br>
-GiveitGo.com<br>
-OrdinalsOrbit.com<br>
-SpatialRecord.com<br>
-ZeepComputex.com<br>
-Spatialshock.com<br>
-Spatialflash.com<br>
-Seniorsrentalapartments.com<br>
-Seniorstownhomes.com<br>
-Gotoholo.com<br>
-Diggily.com<br>
-Indexwebx.com<br>
-Indexpredict.com<br>
-Simulatedly.com<br>
-Spatialexpand.com<br>
-SpatialHoloSpace.com<br>
-CopilotUX.com<br>
-Nexteradiscovery.com<br>
-Quatumtech.com<br>
-SpatialHandsFree.com<br>
-Spatialearpods.com<br>
-Luxuryestatedeals.com<br>
-Hotrefresh.com<br>
-ChatGPTStudio.com<br>
-HuggingFaceStudio.com<br>
-3d-1click.com<br>
-BrainAndMachines.com<br>
-Spatiallevel.com<br>
-Spatialaround.com<br>
-PortedGame.com<br>
-Spatialtrigger.com<br>
-Spatialmantra.com<br>
-Opendataresource.com<br>
-SpatialMentalHealth.com<br>
-Prompt2Action.com<br>
-ChatGPTPromptCourse.com<br>
-Onlinepromptcourse.com<br>
-Lease-own.com<br>
-AntiWashTrade.com<br>
-Meetwebster.com<br>
-RealTimeCody.com<br>
-AutoWebReport.com<br>
-MasterinPrompt.com<br>
-Curveband.com<br>
-Onlinefreeassessment.com<br>
-Wayvroom.com<br>
-DrugAndMachine.com<br>
-Expireddomainssale.com<br>
-Uphodlwallet.com<br>
-AntiPersonnelDrones.com<br>
-Antipersonneldrone.com<br>
-Traviolounge.com<br>
-Cinematicride.com<br>
-Vacation-spots.com<br>
-Callitgen.com<br>
-Makeaclip.com<br>
-In-DemandJobs.com<br>
-Threadsbuck.com<br>
-ThreadsFoundation.com<br>
-Cryptodeskfoundation.com<br>
-Multiplierinvest.com<br>
-Payjamajobs.com<br>
-Photoxel.com<br>
-Exoxel.com<br>
-Theoutsmart.com<br>
-Islamicgulf.com<br>
-DigitalAudioSeries.com<br>
-Ideatovideo.com<br>
-BodybuildSport.com<br>
-Summersidegroup.com<br>
-Digitalzombies.com<br>
-Arrers.com<br>
-Gubbing.com<br>
-TheSignify.com<br>
-Brillinx.com<br>
-Toggturks.com<br>
-BuySolarCredit.com<br>
-VidTranslator.com<br>
-Xspatian.com<br>
-LifeChainHealth.com<br>
-Webxter.com<br>
-VeryMuchCanadian.com<br>
-Spatialairpods.com<br>
-OpensourceforAmerica.com<br>
-SmartByk.com<br>
-Realistic365.com<br>
-PawnPorno.com<br>
-Snitchcoin.com<br>
-Hostelcum.com<br>
-Bharatkudos.com<br>
-Bharattothemoon.com<br>
-Xtradeai.com<br>
-PredictiveTxt.com<br>
-CryptoLegalAid.com<br>
-MyVoiceCloner.com<br>
-MyVoiceTranslator.com<br>
-FindCarRefinance.com<br>
-ContentPredictor.com<br>
-Xelapay.com<br>
-RealtiMeGamer.com<br>
-PhotoStockHouse.com<br>
-FanaticAutomations.com<br>
-BitcoinBusinessBasics.com<br>
-KineticKraze.com<br>
-OwnVirtualEstate.com<br>
-StreatStation.com<br>
-MarylandYouthFootball.com<br>
-Neomlodges.com<br>
-Neomcruiser.com<br>
-AugmentedAmerica.com<br>
-ChicagoEquipmentInsurance.com<br>
-DarkBrokerage.com<br>
-NYEquipmentInsurance.com<br>
-OnChainDepot.com<br>
-NeomLiquor.com<br>
-Fotovec.com<br>
-LuminaTrader.com<br>
-OnChainConvo.com<br>
-DallasEquipmentInsurance.com<br>
-HoustonEquipmentInsurance.com<br>
-DeepBrokerage.com<br>
-JpgBlockchain.com<br>
-JpegBlockchain.com<br>
-UAEwiz.com<br>
-ReplaceHuman.com<br>
-KSAwiz.com<br>
-GillOutFit.com<br>
-EmotionChips.com<br>
-Expert-Agent.com<br>
-DataHubSpot.com<br>
-ShapeSnitch.com<br>
-OnlinePromptSchool.com<br>
-MBSTower.com<br>
-Yuyuck.com<br>
-SmartSecurityEssential.com<br>
-Memeusd.com<br>
-Stylotrade.com<br>
-Azukistake.com<br>
-Framestake.com<br>
-OnChainFrame.com<br>
-Grokgenerative.com<br>
-Testuriq.com<br>
-GenAiStoodio.com<br>
-Liqquidity.com<br>
-Aitravelnav.com<br>
-Valuetelligent.com<br>
-MarketerBrain.com<br>
-FoodMucho.com<br>
-BrainAndMachine.com<br>
-Secondbraindevelopment.com<br>
-ToughTechTalent.com<br>
-OnChainComputation.com<br>
-RemittanceRates.com<br>
-PerplexityEnterprise.com<br>
-Nebulalane.com<br>
-MedicineAndMachine.com<br>
-QuantaMex.com<br>
-Nexarite.com<br>
-RabbitGadget.com<br>
-LLM2LAM.com<br>
-OnChainEncryption.com<br>
-ConnectFiber.com<br>
-PharmaProCare.com<br>
-DepinState.com<br>
-RabbitUX.com<br>
-ZkdxSwap.com<br>
-Zkdxnft.com<br>
-Draw-to-App.com<br>
-ForensicAGI.com<br>
-ForensicASI.com<br>
-Fin-AGI.com<br>
-ReadCopliot.com<br>
-101AGI.com<br>
-SpatialArVr.com<br>
-Xoxle.com<br>
-Xmuxic.com<br>
-Single-Agent.com<br>
-Copilotpro365.com<br>
-NextDrugDiscovery.com<br>
-Intassistant.com<br>
-Lumiqua.com<br>
-AgentQuad.com<br>
-Lumivolve.com<br>
-Perspicify.com<br>
-MelloQuill.com<br>
-Turingium.com<br>
-IntInsight.com<br>
-NeuralinkLab.com<br>
-SignalWords.com<br>
-Quantkitties.com<br>
-Coassisting.com<br>
-EzePrompts.com<br>
-Naturalmo.com<br>
-Dynadotpay.com<br>
-CrosswayLandscaping.com<br>
-TerminalDesigns.com<br>
-MagneticGuide.com<br>
-IdeaInsulationAndRoofing.com<br>
-WestScaffolding.com<br>
-CanvasEnhancer.com<br>
-Orangeplusplus.com<br>
-GroverSearch.com<br>
-OrangeDapps.com<br>
-OnchainOrange.com<br>
-IdeaLandScaping.com<br>
-CanvasEnhanced.com<br>
-CanvasEnhance.com<br>
-OrangeRig.com<br>
-OrangeMetro.com<br>
-Genvidu.com<br>
-Shorfact.com<br>
-QuantBooth.com<br>
-CanvasEnhaced.com<br>
-MiniChatbots.com<br>
-MagnetGuide.com<br>
-NotRaffles.com<br>
-NotView.com<br>
-NenoApp.com<br>
-RsicVault.com<br>
-ConnectQuery.com<br>
-NotVault.com<br>
-NotStarter.com<br>
-NotKeeper.com<br>
-PromptDir.com<br>
-NotStake.com<br>
-HabibiBotics.com<br>
-QOpticals.com<br>
-NotDividend.com<br>
-VocalCopilot.com<br>
-VoiceChancellor.com<br>
-HereThere.ai<br>
-Notmarketplace.com<br>
-SomewhereCloud.com<br>
-FitnessSuplements.com<br>
-ZohoMoho.com<br>
-InstantSolo.com<br>
-WelcomeToTheBrain.com<br>
-AliraHealthConsultants.com<br>
-AssessRobotics.com<br>
-SurgicalBotics.com<br>
-GigaFactoryCompute.com<br>
-TelegramCopilot.com<br>
-VisitBrain.com<br>
-IntAppFactory.com<br>
-GenSoundEffects.com<br>
-CloneCopilot.com<br>
-PhDIntelligence.com<br>
-SafeSuperint.com<br>
-IDProtectionAgency.com<br>
-StevekBark.com<br>
-SteveBark.com<br>
-WhatPremium.com<br>
-AssestsAssessment.com         
+        <td class="domain-column all com">
+	VGLY.com<br>
+	FFNP.com<br>
+	DKDX.com<br>
+	Oreky.com<br>
+	Autoash.com<br>
+	Wikindex.com<br>
+	Zigex.com<br>
+	Nitiri.com<br>
+	Mizoz.com<br>
+	Woholo.com<br>
+	Yazuh.com<br>
+	Zemiy.com<br>
+	YawBet.com<br>
+	Yp97.com<br>
+	Jajax.com<br>
+	Vitvo.com<br>
+	Ebzly.com<br>
+	Ebzny.com<br>
+	Korrol.com<br>
+	Zarroo.com<br>
+	Brytcoin.com<br>
+	BrytRoom.com<br>
+	Hytcoin.com<br>
+	Lyfcoin.com<br>
+	DBCrunch.com<br>
+	DuduRobotics.com<br>
+	Fruitylo.com<br>
+	Yakyz.com<br>
+	Arxik.com<br>
+	Grokux.com<br>
+	Azkiz.com<br>
+	Azkix.com<br>
+	Duetera.com<br>
+	Ritkik.com<br>
+	AATTN.com<br>
+	OptionVoice.com<br>
+	123Verse.com<br>
+	Dyorverse.com<br>
+	Gaiaverse.com<br>
+	Intframe.com<br>  (Intelligent frame)
+	Asifra.com<br> (Artificial Super Intelligent 	Female Robotic Assistant)
+	ZVSecurity.com<br>
+	Chimerize.com<br>
+	Moneybizz.com<br>
+	Heytelepathy.com<br>
+	Botsom.com<br>
+	Election2k24.com<br>
+	TrumpOnceAgain.com<br>
+	Election2024Results.com<br>
+	Runesmaster.com<br>
+	Runescards.com<br>
+	SupeRunes.com<br>
+	Runedevs.com<br>
+	Runefork.com<br>
+	RuneRumble.com<br>
+	RuneArena.com<br>
+	TonMiles.com<br>
+	TonRarity.com<br>
+	Gangton.com<br>
+	Tonames.com<br>
+	TonAnime.com<br>
+	TonArena.com<br>
+	TonBotics.com<br>
+	TonCopilot.com<br>
+	TonCubs.com<br>
+	TonDirectory.com<br>
+	TonDividend.com<br>
+	TonDudes.com<br>
+	TonFreedom.com<br>
+	TonHackathon.com<br>
+	TonKitties.com<br>
+	TonMoji.com<br>
+	TonPenguins.com<br>
+	TonPing.com<br>
+	TonPlaza.com<br>
+	TonPlot.com<br>
+	TonPups.com<br>
+	Tonsanity.com<br>
+	Tonsora.com<br>
+	Tonston.com<br>
+	Tontether.com<br>
+	Tonting.com<br>
+	Tontoonz.com<br>
+	Tontower.com<br>
+	Tontunes.com<br>
+	Tonventure.com<br>
+	OnedayOneHome.com<br>
+	Unlimitvoice.com<br>
+	Photoxel.com<br>
+	Exoxel.com<br>
+	Mindecoder.com<br>
+	Onlypromptly.com<br>
+	Xrevv.com<br>
+	Xwishx.com<br>
+	Theoutsmart.com<br>
+	Islamicgulf.com<br>
+	Mindecoder.com<br>
+	Onlypromptly.com<br>
+	Xrevv.com<br>
+	Xwishx.com<br>
+	Greeninlife.com<br>
+	Tosdt.com<br>
+	AudibleAssistant.com<br>
+	ConfigurePrompt.com<br>
+	Whatexchange.com<br>
+	Freewaylandscaping.com<br>
+	CaptchaGenerator.com<br>
+	Kwikychat.com<br>
+	Indexeschat.com<br>
+	Genappfactory.com<br>
+	Openeduhub.com<br>
+	Xtractify.com<br>
+	Xporfolio.com<br>
+	Democraticedu.com<br>
+	Txt2Meme.com<br>
+	OpenneuroMorph.com<br>
+	IntelligentEXE.com<br>
+	SpatialRemix.com<br>
+	Fakeimggenerator.com<br>
+	DocuIntelligence.com<br>
+	Vmworkstation.com<br>
+	PrestoXpert.com<br>
+	Zksyncux.com<br>
+	Zkeraux.com<br>
+	Spatialaah.com<br>
+	Generativecontentengine.com<br>
+	Spatialsoundproof.com<br>
+	Multiby.com<br>
+	AutoDateMatch.com<br>
+	Zkfullstack.com<br>
+	TrustyCopilot.com<br>
+	Languagemotion.com<br>
+	AllGenerative.com<br>
+	Op3nweb3.com<br>
+	Spatialstorm.com<br>
+	GiveitGo.com<br>
+	OrdinalsOrbit.com<br>
+	SpatialRecord.com<br>
+	ZeepComputex.com<br>
+	Spatialshock.com<br>
+	Spatialflash.com<br>
+	Seniorsrentalapartments.com<br>
+	Seniorstownhomes.com<br>
+	Gotoholo.com<br>
+	Diggily.com<br>
+	Indexwebx.com<br>
+	Indexpredict.com<br>
+	Simulatedly.com<br>
+	Spatialexpand.com<br>
+	SpatialHoloSpace.com<br>
+	CopilotUX.com<br>
+	Nexteradiscovery.com<br>
+	Quatumtech.com<br>
+	SpatialHandsFree.com<br>
+	Spatialearpods.com<br>
+	Luxuryestatedeals.com<br>
+	Hotrefresh.com<br>
+	ChatGPTStudio.com<br>
+	HuggingFaceStudio.com<br>
+	3d-1click.com<br>
+	BrainAndMachines.com<br>
+	Spatiallevel.com<br>
+	Spatialaround.com<br>
+	PortedGame.com<br>
+	Spatialtrigger.com<br>
+	Spatialmantra.com<br>
+	Opendataresource.com<br>
+	SpatialMentalHealth.com<br>
+	Prompt2Action.com<br>
+	ChatGPTPromptCourse.com<br>
+	Onlinepromptcourse.com<br>
+	Lease-own.com<br>
+	AntiWashTrade.com<br>
+	Meetwebster.com<br>
+	RealTimeCody.com<br>
+	AutoWebReport.com<br>
+	MasterinPrompt.com<br>
+	Curveband.com<br>
+	Onlinefreeassessment.com<br>
+	Wayvroom.com<br>
+	DrugAndMachine.com<br>
+	Expireddomainssale.com<br>
+	Uphodlwallet.com<br>
+	AntiPersonnelDrones.com<br>
+	Antipersonneldrone.com<br>
+	Traviolounge.com<br>
+	Cinematicride.com<br>
+	Vacation-spots.com<br>
+	Callitgen.com<br>
+	Makeaclip.com<br>
+	In-DemandJobs.com<br>
+	Threadsbuck.com<br>
+	ThreadsFoundation.com<br>
+	Cryptodeskfoundation.com<br>
+	Multiplierinvest.com<br>
+	Payjamajobs.com<br>
+	Photoxel.com<br>
+	Exoxel.com<br>
+	Theoutsmart.com<br>
+	Islamicgulf.com<br>
+	DigitalAudioSeries.com<br>
+	Ideatovideo.com<br>
+	BodybuildSport.com<br>
+	Summersidegroup.com<br>
+	Digitalzombies.com<br>
+	Arrers.com<br>
+	Gubbing.com<br>
+	TheSignify.com<br>
+	Brillinx.com<br>
+	Toggturks.com<br>
+	BuySolarCredit.com<br>
+	VidTranslator.com<br>
+	Xspatian.com<br>
+	LifeChainHealth.com<br>
+	Webxter.com<br>
+	VeryMuchCanadian.com<br>
+	Spatialairpods.com<br>
+	OpensourceforAmerica.com<br>
+	SmartByk.com<br>
+	Realistic365.com<br>
+	PawnPorno.com<br>
+	Snitchcoin.com<br>
+	Hostelcum.com<br>
+	Bharatkudos.com<br>
+	Bharattothemoon.com<br>
+	Xtradeai.com<br>
+	PredictiveTxt.com<br>
+	CryptoLegalAid.com<br>
+	MyVoiceCloner.com<br>
+	MyVoiceTranslator.com<br>
+	FindCarRefinance.com<br>
+	ContentPredictor.com<br>
+	Xelapay.com<br>
+	RealtiMeGamer.com<br>
+	PhotoStockHouse.com<br>
+	FanaticAutomations.com<br>
+	BitcoinBusinessBasics.com<br>
+	KineticKraze.com<br>
+	OwnVirtualEstate.com<br>
+	StreatStation.com<br>
+	MarylandYouthFootball.com<br>
+	Neomlodges.com<br>
+	Neomcruiser.com<br>
+	AugmentedAmerica.com<br>
+	ChicagoEquipmentInsurance.com<br>
+	DarkBrokerage.com<br>
+	NYEquipmentInsurance.com<br>
+	OnChainDepot.com<br>
+	NeomLiquor.com<br>
+	Fotovec.com<br>
+	LuminaTrader.com<br>
+	OnChainConvo.com<br>
+	DallasEquipmentInsurance.com<br>
+	HoustonEquipmentInsurance.com<br>
+	DeepBrokerage.com<br>
+	JpgBlockchain.com<br>
+	JpegBlockchain.com<br>
+	UAEwiz.com<br>
+	ReplaceHuman.com<br>
+	KSAwiz.com<br>
+	GillOutFit.com<br>
+	EmotionChips.com<br>
+	Expert-Agent.com<br>
+	DataHubSpot.com<br>
+	ShapeSnitch.com<br>
+	OnlinePromptSchool.com<br>
+	MBSTower.com<br>
+	Yuyuck.com<br>
+	SmartSecurityEssential.com<br>
+	Memeusd.com<br>
+	Stylotrade.com<br>
+	Azukistake.com<br>
+	Framestake.com<br>
+	OnChainFrame.com<br>
+	Grokgenerative.com<br>
+	Testuriq.com<br>
+	GenAiStoodio.com<br>
+	Liqquidity.com<br>
+	Aitravelnav.com<br>
+	Valuetelligent.com<br>
+	MarketerBrain.com<br>
+	FoodMucho.com<br>
+	BrainAndMachine.com<br>
+	Secondbraindevelopment.com<br>
+	ToughTechTalent.com<br>
+	OnChainComputation.com<br>
+	RemittanceRates.com<br>
+	PerplexityEnterprise.com<br>
+	Nebulalane.com<br>
+	MedicineAndMachine.com<br>
+	QuantaMex.com<br>
+	Nexarite.com<br>
+	RabbitGadget.com<br>
+	LLM2LAM.com<br>
+	OnChainEncryption.com<br>
+	ConnectFiber.com<br>
+	PharmaProCare.com<br>
+	DepinState.com<br>
+	RabbitUX.com<br>
+	ZkdxSwap.com<br>
+	Zkdxnft.com<br>
+	Draw-to-App.com<br>
+	ForensicAGI.com<br>
+	ForensicASI.com<br>
+	Fin-AGI.com<br>
+	ReadCopliot.com<br>
+	101AGI.com<br>
+	SpatialArVr.com<br>
+	Xoxle.com<br>
+	Xmuxic.com<br>
+	Single-Agent.com<br>
+	Copilotpro365.com<br>
+	NextDrugDiscovery.com<br>
+	Intassistant.com<br>
+	Lumiqua.com<br>
+	AgentQuad.com<br>
+	Lumivolve.com<br>
+	Perspicify.com<br>
+	MelloQuill.com<br>
+	Turingium.com<br>
+	IntInsight.com<br>
+	NeuralinkLab.com<br>
+	SignalWords.com<br>
+	Quantkitties.com<br>
+	Coassisting.com<br>
+	EzePrompts.com<br>
+	Naturalmo.com<br>
+	Dynadotpay.com<br>
+	CrosswayLandscaping.com<br>
+	TerminalDesigns.com<br>
+	MagneticGuide.com<br>
+	IdeaInsulationAndRoofing.com<br>
+	WestScaffolding.com<br>
+	CanvasEnhancer.com<br>
+	Orangeplusplus.com<br>
+	GroverSearch.com<br>
+	OrangeDapps.com<br>
+	OnchainOrange.com<br>
+	IdeaLandScaping.com<br>
+	CanvasEnhanced.com<br>
+	CanvasEnhance.com<br>
+	OrangeRig.com<br>
+	OrangeMetro.com<br>
+	Genvidu.com<br>
+	Shorfact.com<br>
+	QuantBooth.com<br>
+	CanvasEnhaced.com<br>
+	MiniChatbots.com<br>
+	MagnetGuide.com<br>
+	NotRaffles.com<br>
+	NotView.com<br>
+	NenoApp.com<br>
+	RsicVault.com<br>
+	ConnectQuery.com<br>
+	NotVault.com<br>
+	NotStarter.com<br>
+	NotKeeper.com<br>
+	PromptDir.com<br>
+	NotStake.com<br>
+	HabibiBotics.com<br>
+	QOpticals.com<br>
+	NotDividend.com<br>
+	VocalCopilot.com<br>
+	VoiceChancellor.com<br>
+	Notmarketplace.com<br>
+	SomewhereCloud.com<br>
+	FitnessSuplements.com<br>
+	ZohoMoho.com<br>
+	InstantSolo.com<br>
+	WelcomeToTheBrain.com<br>
+	AliraHealthConsultants.com<br>
+	AssessRobotics.com<br>
+	SurgicalBotics.com<br>
+	GigaFactoryCompute.com<br>
+	TelegramCopilot.com<br>
+	VisitBrain.com<br>
+	IntAppFactory.com<br>
+	GenSoundEffects.com<br>
+	CloneCopilot.com<br>
+	PhDIntelligence.com<br>
+	SafeSuperint.com<br>
+	IDProtectionAgency.com<br>
+	StevekBark.com<br>
+	SteveBark.com<br>
+	WhatPremium.com<br>
+	AssestsAssessment.com       
         </td>
-        <td>
-ABT.ai<br>  (Artificial Brain Technology)
-VHA.ai<br>  (Virtual Health Assistant)
-MZB.ai<br>  (Multi Zone Brain)
-Allon.ai<br> (All on)
-Hiki.ai<br>
-JioBrain.ai<br>
-OpenMesh.ai<br>  (Got offer of $12k)
-Sizzler.ai<br>
-Lillio.ai<br>
-FakeSpy.ai<br>
-HeyGemini.ai<br>
-Chukar.ai<br>
-GeminiEra.ai<br>
-Transcriptive.ai<br>
-SyntheticHuman.ai<br>
-Interruption.ai<br>
-HereThere.ai<br>
-Multi-Agent.ai<br>
-DataSquare.ai<br>
-FakeSpot.ai<br>
-ComputerBrain.ai<br>
-internetart.ai<br>
-GeminiAssistant.ai<br>
-TechnicalExpert.ai<br>
-DigitalSecurity.ai<br>
-TechSupportAgent.ai
+        <td class="domain-column all ai">
+	ABT.ai<br>  (Artificial Brain Technology)
+	VHA.ai<br>  (Virtual Health Assistant)
+	MZB.ai<br>  (Multi Zone Brain)
+	Allon.ai<br> (All on)
+	Hiki.ai<br>
+	JioBrain.ai<br>
+	OpenMesh.ai<br>  (Got offer of $12k)
+	Sizzler.ai<br>
+	Lillio.ai<br>
+	FakeSpy.ai<br>
+	HeyGemini.ai<br>
+	Chukar.ai<br>
+	GeminiEra.ai<br>
+	Transcriptive.ai<br>
+	SyntheticHuman.ai<br>
+	Interruption.ai<br>
+	HereThere.ai<br>
+	Multi-Agent.ai<br>
+	DataSquare.ai<br>
+	FakeSpot.ai<br>
+	ComputerBrain.ai<br>
+	internetart.ai<br>
+	GeminiAssistant.ai<br>
+	TechnicalExpert.ai<br>
+	DigitalSecurity.ai<br>
+	TechSupportAgent.ai
         </td>
-        <td>
-Artificialgeneralintelligence.si<br>
-Align.si<br>
-Auditool.si<br>
-Boyfriend.si<br>
-Brainmap.si<br>
-Celsius.si<br>
-Computerbrain.si<br>
-Configure.si<br>
-Copilotstudio.si<br>
-Ethical.si<br>
-Fahrenheit.si<br>
-Openssi.si<br>
-Safeguard.si<br>
-Safu.si<br>
-Sifra.si<br>
-Superagent.si<br>
-Superbrain.si<br>
-Supersafe.si<br>
-Mistral.si<br>
-PowerQuery.si<br>
-Relativity.si<br>
-SafeandSound.si
-</td>
-        <td> 
-O2.bot<br>
-H2o.bot<br>
-Jio.bot<br>
-G42.bot<br>
-Pplx.bot<br>
-Topg.bot<br>
-Broca.bot<br>
-Skild.bot<br>
-Abcus.bot<br>
-Bingo.bot<br>
-Jugar.bot<br>
-Lillio.bot<br>
-Zabbix.bot<br>
-Cookie.bot<br>
-Lechat.bot<br>
-Altair.bot<br>
-Haptik.bot<br>
-Alteryx.bot<br>
-Khanmigo.bot<br>
-Supplier.bot<br>
-Hanooman.bot<br>
-Interpret.bot<br>
-Accelerator.bot<br>
-Virtualagent.bot<br>
-Troubleshoot.bot
+        <td class="domain-column all si">	Artificialgeneralintelligence.si<br>
+	Align.si<br>
+	Auditool.si<br>
+	Boyfriend.si<br>
+	Brainmap.si<br>
+	Celsius.si<br>
+	Computerbrain.si<br>
+	Configure.si<br>
+	Copilotstudio.si<br>
+	Ethical.si<br>
+	Fahrenheit.si<br>
+	Openssi.si<br>
+	Safeguard.si<br>
+	Safu.si<br>
+	Sifra.si<br>
+	Superagent.si<br>
+	Superbrain.si<br>
+	Supersafe.si<br>
+	Mistral.si<br>
+	PowerQuery.si<br>
+	Relativity.si<br>
+	SafeandSound.si
         </td>
-        <td> 
-5443.xyz<br>
-1548.xyz<br>
-5090.xyz<br>
-Uzum.xyz<br>
-Xgen.xyz<br>
-Jusdt.xyz<br>
-Chukar.xyz<br>
-Decoin.xyz<br>
-Bittoo.xyz<br>
-Taptalk.xyz<br>
-Ai4Good.xyz<br>
-Riffing.xyz<br>
-Slashes.xyz<br>
-Opposum.xyz<br>
-Karakul.xyz<br>
-Rumcoin.xyz<br>
-Hoatzin.xyz<br>
-RuneRock.xyz<br>
-Breacher.xyz<br>
-Consumed.xyz<br>
-Presight.xyz<br>
-Runester.xyz<br>
-Orbitals.xyz<br>
-Intertia.xyz<br>
-Tontether.xyz<br>
-Elaborated.xyz<br>
-DreamBooth.xyz<br>
-Paragliders.xyz<br>
-Explanatory.xyz<br>
-Interruptive.xyz<br>
-Transcriptive.xyz<br>
-Fingerscrossed.xyz<br>
-ArtificialMachines.xyz<br>
-OnChainComputaion.xyz.<br>
-Amrak.xyz<br>
-VoiceCloner.xyz<br>
-Aitechie.xyz<br>
-AiBrainy.xyz<br>
-Tensora.xyz<br>
-Frameverse.xyz<br>
-Torquoise.xyz<br>
-Gabbro.xyz<br>
-Framestake.xyz<br>
-FrameLand.xyz<br>
-Kgaas.xyz<br>
-Planck.xyz<br>
-Joeswap.xyz<br>
-Mantlestake.xyz<br>
-Cobracoin.xyz<br>
-Universitycoin.xyz<br>
-Teleportal.xyz<br>
-Lyfcoin.xyz<br>
-Quantchain.xyz<br>
-DepinState.xyz 
+        <td class="domain-column all bot">
+	O2.bot<br>
+	H2o.bot<br>
+	Jio.bot<br>
+	G42.bot<br>
+	Pplx.bot<br>
+	Topg.bot<br>
+	Broca.bot<br>
+	Skild.bot<br>
+	Abcus.bot<br>
+	Bingo.bot<br>
+	Jugar.bot<br>
+	Lillio.bot<br>
+	Zabbix.bot<br>
+	Cookie.bot<br>
+	Lechat.bot<br>
+	Altair.bot<br>
+	Haptik.bot<br>
+	Alteryx.bot<br>
+	Khanmigo.bot<br>
+	Supplier.bot<br>
+	Hanooman.bot<br>
+	Interpret.bot<br>
+	Perplexity.bot<br>
+	Accelerator.bot<br>
+	Virtualagent.bot<br>
+	Troubleshoot.bot
         </td>
-        <td>
-GenAiCompute.com<br>
-ArtifactualAi.com<br>
-TheConstitutionalAi.com<br>
-BeefedAi.com<br>
-Assessbyai.com<br>
-UtaxAi.com<br>
-EmergencyResponseAi.com<br>
-Superaipro.com<br>
-Openuniversityai.com<br>
-Openlineai.com<br>
-CryptoPlusAi.com<br>
-Gorjsai.com<br>
-Quicktimeai.com<br>
-Quickstyleai.com<br>
-Gofundai.com<br>
-Entwineai.com<br>
-PresearchAi.com<br>
-SuperGirlAi.com<br>
-chukarAi.com<br>
-FakeSpyAi.com<br>
-CheetosAi.com<br>
-Scamdetectai.com<br>
-Detectscamai.com<br>
-Anguillai.com<br>
-TheUAi.com<br>
-Qsysai.com
-</td>
-             <td>
-AiMfer.com<br>
-AiSelfEdu.com<br>
-AiKnowy.com<br>
-AiThinky.com<br>
-Aimathy.com<br>
-AiRelearn.com<br>
-Aiconsistent.com<br>
-AiInterpretability.com<br>
-AiGen2.com<br>
-AiHereThere.com<br>
-HereThereAi.com<br>
-Aianguilla.com<br>
-AiConstant.com<br>
-Aiditch.com<br>
-Aifilch.com<br>
-Aipaint3d.com<br>
-AiStickerGenerator.com<br>
-AiStateless.com<br>
-AiConstitutionBook.com<br>
-AitechAgents.com<br>
-AiGeneratedPlaylist.com<br>
-Aipowerhub.com<br>
-Aibeefed.com<br>
-AipcFactory.com<br>
-AiPlusPc.com<br>
-AiRollercoaster.com<br>
-AiBroca.com<br>
-AiInterruption.com<br>
-Ainterruption.com<br>
-AiInterrupt.com<br>
-AiMuxic.com<br>
-AiSalesAssist.com<br>
-AiCryptoCode.com<br>
-AiOpenLearn.com<br>
-Aigenapp.com<br>
-AiProCare.com<br>
-AiReachKit.com<br>
-AiTeachKits.com<br>
-AiForVid.com<br>
-AiMagic321.com<br>
-AiPickedup.com<br>
-AiAuditJobs.com<br>
-AiAuditCourse.com<br>
-AiShowHomes.com<br>
-AiBotPlay.com<br>
-AiShortCourse.com<br>
-AiDomainPlus.com<br>
-AiMentalPlus.com<br>
-AiInvigilator.com<br>
-AiExpeditor.com<br>
-AiSneakpeek.com<br>
-AiCheetos.com<br>
-AiGenGuard.com<br>
-AiFoodFusion.com<br>
-AiHomeMind.com<br>
-AiSportik.com<br>
-Aistateless.com<br>
-AiDitch.com<br>
-AiSmartCollar.com<br>
-AiMaxStudio.com<br>
-AiOdio.com<br>
-AiGadget.tech<br>
-AiScamDetect.com
-
-</td>
-         <td>
-ImmediateGPT.com<br>
-StyloGpt.com<br>
-SpottradeGPT.com<br>
-PretrainedGPT.com<br>
-SelfDriveGPT.com<br>
-BrainTrainGPT.com<br>
-TradeWellGPT.com<br>
-RevshareGPT.com<br>
-BitsoGPT.com<br>
-TechAgentGPT.com<br>
-IntegerGPT.com<br>
-FtpGPT.com
-</td>
-        <td>
-GPTCrop.com<br>
-GPTmaxi.com<br>
-GPTEnterpriseCloud.com<br>
-</td>
-        <td>
-BitNaut.org<br>
-3xCapital.org<br>
-Multi-GPT.org<br>
-GeneratorHub.org<br>
-AnxietyAmerica.org<br>
-USAngelInvestors.org<br>
-BharatEntrepreneurs.org<br>
-ActionForHealthyCommunities.org<br>
-9gag.ing<br>
-DataHa.sh<br>
-Epilot.energy<br>
-Sponsor.energy
-Fun.meme<br>
-Lumiere.ing<br>
-Lumiere.meme<br>
-Memechain.meme<br>
-Meme.ing<br>
-Ton.community<br>
-Onix.tech<br>
-krypto.exchange
+        <td class="domain-column all xyz">
+	5443.xyz<br>
+	1548.xyz<br>
+	5090.xyz<br>
+	Uzum.xyz<br>
+	Xgen.xyz<br>
+	Jusdt.xyz<br>
+	Chukar.xyz<br>
+	Decoin.xyz<br>
+	Bittoo.xyz<br>
+	Taptalk.xyz<br>
+	Ai4Good.xyz<br>
+	Riffing.xyz<br>
+	Slashes.xyz<br>
+	Opposum.xyz<br>
+	Karakul.xyz<br>
+	Rumcoin.xyz<br>
+	Hoatzin.xyz<br>
+	RuneRock.xyz<br>
+	Breacher.xyz<br>
+	Consumed.xyz<br>
+	Presight.xyz<br>
+	Runester.xyz<br>
+	Orbitals.xyz<br>
+	Intertia.xyz<br>
+	Tontether.xyz<br>
+	Elaborated.xyz<br>
+	DreamBooth.xyz<br>
+	Paragliders.xyz<br>
+	Explanatory.xyz<br>
+	Interruptive.xyz<br>
+	Transcriptive.xyz<br>
+	Fingerscrossed.xyz<br>
+	ArtificialMachines.xyz<br>
+	OnChainComputaion.xyz.<br>
+	Amrak.xyz<br>
+	VoiceCloner.xyz<br>
+	Aitechie.xyz<br>
+	AiBrainy.xyz<br>
+	Tensora.xyz<br>
+	Frameverse.xyz<br>
+	Torquoise.xyz<br>
+	Gabbro.xyz<br>
+	Framestake.xyz<br>
+	FrameLand.xyz<br>
+	Kgaas.xyz<br>
+	Planck.xyz<br>
+	Joeswap.xyz<br>
+	Mantlestake.xyz<br>
+	Cobracoin.xyz<br>
+	Universitycoin.xyz<br>
+	Teleportal.xyz<br>
+	Lyfcoin.xyz<br>
+	Quantchain.xyz<br>
+	DepinState.xyz 
+        </td>
+        <td class="domain-column all keyword-ai">
+	GenAiCompute.com<br>
+	ArtifactualAi.com<br>
+	TheConstitutionalAi.com<br>
+	BeefedAi.com<br>
+	Assessbyai.com<br>
+	UtaxAi.com<br>
+	EmergencyResponseAi.com<br>
+	Superaipro.com<br>
+	Openuniversityai.com<br>
+	Openlineai.com<br>
+	CryptoPlusAi.com<br>
+	Gorjsai.com<br>
+	Quicktimeai.com<br>
+	Quickstyleai.com<br>
+	Gofundai.com<br>
+	Entwineai.com<br>
+	PresearchAi.com<br>
+	SuperGirlAi.com<br>
+	chukarAi.com<br>
+	FakeSpyAi.com<br>
+	CheetosAi.com<br>
+	Scamdetectai.com<br>
+	Detectscamai.com<br>
+	Anguillai.com<br>
+	TheUAi.com<br>
+	Qsysai.com
+        </td>
+        <td class="domain-column all ai-keyword">
+	AiMfer.com<br>
+	AiSelfEdu.com<br>
+	AiKnowy.com<br>
+	AiThinky.com<br>
+	Aimathy.com<br>
+	AiRelearn.com<br>
+	Aiconsistent.com<br>
+	AiInterpretability.com<br>
+	AiGen2.com<br>
+	AiHereThere.com<br>
+	HereThereAi.com<br>
+	Aianguilla.com<br>
+	AiConstant.com<br>
+	Aiditch.com<br>
+	Aifilch.com<br>
+	Aipaint3d.com<br>
+	AiStickerGenerator.com<br>
+	AiStateless.com<br>
+	AiConstitutionBook.com<br>
+	AitechAgents.com<br>
+	AiGeneratedPlaylist.com<br>
+	Aipowerhub.com<br>
+	Aibeefed.com<br>
+	AipcFactory.com<br>
+	AiPlusPc.com<br>
+	AiRollercoaster.com<br>
+	AiBroca.com<br>
+	AiInterruption.com<br>
+	Ainterruption.com<br>
+	AiInterrupt.com<br>
+	AiMuxic.com<br>
+	AiSalesAssist.com<br>
+	AiCryptoCode.com<br>
+	AiOpenLearn.com<br>
+	AiGenApp.com<br>
+	AiProCare.com<br>
+	AiReachKit.com<br>
+	AiTeachKits.com<br>
+	AiForVid.com<br>
+	AiMagic321.com<br>
+	AiPickedup.com<br>
+	AiAuditJobs.com<br>
+	AiAuditCourse.com<br>
+	AiShowHomes.com<br>
+	AiBotPlay.com<br>
+	AiShortCourse.com<br>
+	AiDomainPlus.com<br>
+	AiMentalPlus.com<br>
+	AiInvigilator.com<br>
+	AiExpeditor.com<br>
+	AiSneakpeek.com<br>
+	AiCheetos.com<br>
+	AiGenGuard.com<br>
+	AiFoodFusion.com<br>
+	AiHomeMind.com<br>
+	AiSportik.com<br>
+	Aistateless.com<br>
+	AiDitch.com<br>
+	AiSmartCollar.com<br>
+	AiMaxStudio.com<br>
+	AiOdio.com<br>
+	AiGadget.tech<br>
+	AiScamDetect.com
+        </td>
+        <td class="domain-column all keyword-gpt">
+	ImmediateGPT.com<br>
+	StyloGpt.com<br>
+	SpottradeGPT.com<br>
+	PretrainedGPT.com<br>
+	SelfDriveGPT.com<br>
+	BrainTrainGPT.com<br>
+	TradeWellGPT.com<br>
+	RevshareGPT.com<br>
+	BitsoGPT.com<br>
+	TechAgentGPT.com<br>
+	IntegerGPT.com<br>
+	FtpGPT.com
+        </td>
+        <td class="domain-column all gpt-keyword"
+	GPTCrop.com<br>
+	GPTmaxi.com<br>
+	GPTEnterpriseCloud.com<br>     
+        </td>
+        <td class="domain-column all miscellaneous">
+	BitNaut.org<br>
+	3xCapital.org<br>
+	Multi-GPT.org<br>
+	GeneratorHub.org<br>
+	AnxietyAmerica.org<br>
+	USAngelInvestors.org<br>
+	BharatEntrepreneurs.org<br>
+	ActionForHealthyCommunities.org<br>
+	9gag.ing<br>
+	DataHa.sh<br>
+	Epilot.energy<br>
+	Fun.meme<br>
+	Lumiere.ing<br>
+	Lumiere.meme<br>
+	Memechain.meme<br>
+	Meme.ing<br>
+	Perplexity.studio<br>
+	Ton.community<br>
+	Onix.tech<br>
         </td>
     </tr>
 </table>
